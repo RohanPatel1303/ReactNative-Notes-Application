@@ -19,12 +19,12 @@ const Notes = ({ navigation,route }) => {
     }
     setTimeout(() => {
         fetchdata();
-    }, 2000);
+    }, 2);
     const renderItem = ({ item }) => {
         var count = 1;
         const nav_to_editor=()=>{
             console.log(item)
-            navigation.navigate("Editor",item.id)
+            navigation.navigate("Editor",{item})
         }
         // console.log("helo item",item.title)
         return (            
