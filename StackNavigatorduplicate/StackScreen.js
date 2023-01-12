@@ -1,10 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Notes from "../Screens/Notes";
-import Home from "../Screens/Home";
-import Editor from "../Screens/Editor";
+import Notes from "../Screensduplicate/Notes";
+import Editor from "../Screensduplicate/Editor";
 import { NavigationContainer } from "@react-navigation/native";
-import CreateNote from "../Screens/CreateNote";
+import CreateNote from "../Screensduplicate/CreateNote";
 const StackScreen=()=>{
     const Stack=createStackNavigator();
     return(

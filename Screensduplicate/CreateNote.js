@@ -6,28 +6,24 @@ import uuid from "react-native-uuid"
 const CreateNote = ({navigation}) => {
     const [title, setTitle] = useState("");
     const [content, setcontent] = useState("");
-    // const [pdata,setpdata]=useState(null);
-    // var newdata=null;
-   
     const SaveNote = async () => {
-        // getdata();
+        const red=Math.floor(Math.random()*256)
+        const green=Math.floor(Math.random()*265)
+        const blue=Math.floor(Math.random()*265)
+        const rgba=`rgb(${red},${blue},${green})`
         const pdata=JSON.parse(await AsyncStorage.getItem("List"));
         const id=uuid.v4()
         console.log(id)
-        const data=[{title,content,id}]
+        const data=[{title,content,id,rgba}]
         var newdata=[];
         if(pdata==null){
             await AsyncStorage.setItem("List",JSON.stringify(data));
         }
         else{
-            newdata=[...pdata,{title,content,id}];
+            newdata=[...pdata,{title,content,id,rgba}];
             await AsyncStorage.setItem("List",JSON.stringify(newdata));
-
         }
-        navigation.navigate("Notes")
-
     }
-  
     return (
         <View className="flex-1">
             <View className="flex-row justify-between">
